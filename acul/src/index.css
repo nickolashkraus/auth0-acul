@@ -309,6 +309,15 @@ body {
   --function-khaki-50: #fef9ef;
   --function-khaki-100: #f4efe6;
   --function-khaki-150: #e0dcd3;
+  --function-font-title: "Financier Display", "Times New Roman", serif;
+  --function-font-body: "Inter", ui-sans-serif, sans-serif;
+  --function-font-mono: "DM Mono", ui-monospace, monospace;
+  --font-title: var(--function-font-title);
+  --font-body: var(--function-font-body);
+  --font-body-text: var(--function-font-body);
+  --font-input-label: var(--function-font-body);
+  --font-link: var(--function-font-body);
+  --font-mono: var(--function-font-mono);
 
   /* Colors */
   --ul-theme-color-primary-button: var(--function-orange-500);
@@ -374,6 +383,12 @@ body {
   --ul-theme-widget-logo-height: 52px;
   --ul-theme-widget-header-text-alignment: center;
   --ul-theme-widget-social-buttons-layout: bottom;
+
+  /* Set default font styling. */
+  font-family: var(--function-font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /** UDS Dark Theme Variables **/
@@ -409,4 +424,116 @@ body {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("/assets/fonts/DMMono-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("/assets/fonts/DMMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("/assets/fonts/DMMono-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Financier Display";
+  src: url("/assets/fonts/FinancierDisplay-Light.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Financier Display";
+  src: url("/assets/fonts/FinancierDisplay-LightItalic.woff2") format("woff2");
+  font-weight: 200;
+  font-style: italic;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Financier Display";
+  src: url("/assets/fonts/FinancierDisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Financier Display";
+  src: url("/assets/fonts/FinancierDisplay-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Financier Display";
+  src: url("/assets/fonts/FinancierDisplay-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Financier Display";
+  src: url("/assets/fonts/FinancierDisplay-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: optional;
 }
