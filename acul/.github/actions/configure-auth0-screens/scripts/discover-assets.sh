@@ -16,21 +16,30 @@ if [ ! -d "$SCREEN_ASSETS_DIR" ]; then
 fi
 
 ALL_ASSETS=$(find "dist/assets" -type f \( -name "*.js" -o -name "*.css" \) ! -name "*.map.js" 2>/dev/null | sort)
-SCREEN_JS_FILES=(); SHARED_JS_FILES=(); ROOT_JS_FILES=(); SCREEN_CSS_FILES=(); SHARED_CSS_FILES=()
+SCREEN_JS_FILES=()
+SHARED_JS_FILES=()
+ROOT_JS_FILES=()
+SCREEN_CSS_FILES=()
+SHARED_CSS_FILES=()
 
-while IFS= read -r file_asset; do 
+while IFS= read -r file_asset; do
   if [[ -z "$file_asset" ]]; then continue; fi
   if [[ "$file_asset" == *".js" ]]; then
-    if [[ "$file_asset" == "$SCREEN_ASSETS_DIR/"* ]]; then SCREEN_JS_FILES+=("$file_asset")
-    elif [[ "$file_asset" == "$SHARED_ASSETS_DIR/"* ]]; then SHARED_JS_FILES+=("$file_asset")
-    elif [[ "$file_asset" == "$ROOT_ASSETS_DIR/main."*".js" ]]; then ROOT_JS_FILES+=("$file_asset")
+    if [[ "$file_asset" == "$SCREEN_ASSETS_DIR/"* ]]; then
+      SCREEN_JS_FILES+=("$file_asset")
+    elif [[ "$file_asset" == "$SHARED_ASSETS_DIR/"* ]]; then
+      SHARED_JS_FILES+=("$file_asset")
+    elif [[ "$file_asset" == "$ROOT_ASSETS_DIR/main."*".js" ]]; then
+      ROOT_JS_FILES+=("$file_asset")
     fi
   elif [[ "$file_asset" == *".css" ]]; then
-    if [[ "$file_asset" == "$SCREEN_ASSETS_DIR/"* ]]; then SCREEN_CSS_FILES+=("$file_asset")
-    elif [[ "$file_asset" == "$SHARED_ASSETS_DIR/"* ]]; then SHARED_CSS_FILES+=("$file_asset")
+    if [[ "$file_asset" == "$SCREEN_ASSETS_DIR/"* ]]; then
+      SCREEN_CSS_FILES+=("$file_asset")
+    elif [[ "$file_asset" == "$SHARED_ASSETS_DIR/"* ]]; then
+      SHARED_CSS_FILES+=("$file_asset")
     fi
   fi
-done <<< "$ALL_ASSETS"
+done <<<"$ALL_ASSETS"
 
 if [ ${#SCREEN_JS_FILES[@]} -eq 0 ]; then
   echo "::error::No JavaScript files found for screen: $SCREEN_NAME"
@@ -39,10 +48,11 @@ fi
 
 # Find entry point
 SCREEN_ENTRY_FILE=""
-for file_js_entry in "${SCREEN_JS_FILES[@]}"; do 
+for file_js_entry in "${SCREEN_JS_FILES[@]}"; do
   base_name=$(basename "$file_js_entry")
   if [[ "$base_name" == "index.js" || "$base_name" == "main.js" || "$base_name" == index.*.js || "$base_name" == main.*.js ]]; then
-    SCREEN_ENTRY_FILE="$file_js_entry"; break
+    SCREEN_ENTRY_FILE="$file_js_entry"
+    break
   fi
 done
 
@@ -51,4 +61,4 @@ if [ -z "$SCREEN_ENTRY_FILE" ]; then
 fi
 
 # Export for use by calling script
-export SCREEN_JS_FILES SHARED_JS_FILES ROOT_JS_FILES SCREEN_CSS_FILES SHARED_CSS_FILES SCREEN_ENTRY_FILE 
+export SCREEN_JS_FILES SHARED_JS_FILES ROOT_JS_FILES SCREEN_CSS_FILES SHARED_CSS_FILES SCREEN_ENTRY_FILE

@@ -12,7 +12,7 @@
 }
 
 /** UL Custom Utilities:
-Created to support alignment related utlities like justify, text-align etc with dynamic theming values 
+Created to support alignment related utlities like justify, text-align etc with dynamic theming values
 **/
 @layer utilities {
   /** Custom Utility to handle page layout alignment **/

@@ -1,15 +1,15 @@
-name: 'Upload ACUL Assets to S3'
-description: 'Uploads ACUL build assets to S3 with proper cache settings'
+name: "Upload ACUL Assets to S3"
+description: "Uploads ACUL build assets to S3 with proper cache settings"
 inputs:
   working-directory:
-    description: 'Working directory relative to repository root'
+    description: "Working directory relative to repository root"
     required: true
-    default: '.'
+    default: "."
   s3-bucket-name:
-    description: 'Name of the S3 bucket to upload to'
+    description: "Name of the S3 bucket to upload to"
     required: true
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - shell: bash
       working-directory: ${{ inputs.working-directory }}

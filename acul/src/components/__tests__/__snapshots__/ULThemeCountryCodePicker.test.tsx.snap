@@ -25,10 +25,10 @@ exports[`ULThemeCountryCodePicker Component matches snapshot in disabled state 1
         class="theme-universal:text-input-text theme-universal:font-body truncate"
       >
         Algeria
-        , 
+        ,
         DZ
         ,
-         
+
         213
       </span>
     </div>
@@ -77,10 +77,10 @@ exports[`ULThemeCountryCodePicker Component matches snapshot with fullWidth prop
         class="theme-universal:text-input-text theme-universal:font-body truncate"
       >
         Algeria
-        , 
+        ,
         DZ
         ,
-         
+
         213
       </span>
     </div>
@@ -166,10 +166,10 @@ exports[`ULThemeCountryCodePicker Component matches snapshot with selected count
         class="theme-universal:text-input-text theme-universal:font-body truncate"
       >
         Algeria
-        , 
+        ,
         DZ
         ,
-         
+
         213
       </span>
     </div>

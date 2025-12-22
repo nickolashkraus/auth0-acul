@@ -106,7 +106,7 @@ export default defineConfig({
           if (
             id.includes("/node_modules/react/") ||
             id.includes("/node_modules/react-dom/") ||
-            id.includes("/node_modules/scheduler/")  // Keep React's internals together
+            id.includes("/node_modules/scheduler/") // Keep React's internals together
           ) {
             return "react-vendor";
           }

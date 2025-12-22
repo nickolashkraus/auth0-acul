@@ -34,7 +34,7 @@ default_screen_deployment_status:
   "signup": false
   "signup-id": false
   "signup-password": false
-  
+
   # Screens not yet implemented (alphabetically sorted):
   # "accept-invitation": false
   # "brute-force-protection-unblock": false

@@ -8,12 +8,12 @@ set -euo pipefail
 load_js_module() {
   local file_path="$1"
   local export_name="$2"
-  
+
   if [ ! -f "$file_path" ]; then
     echo "::error::[UTILS] File not found: $file_path"
     return 1
   fi
-  
+
   local result
   result=$(node -e "
     import('$(pwd)/$file_path').then(module => {
@@ -23,12 +23,12 @@ load_js_module() {
       process.exit(1);
     });
   ")
-  
+
   if [ $? -ne 0 ] || [ -z "$result" ]; then
     echo "::error::[UTILS] Failed to load $export_name from $file_path"
     return 1
   fi
-  
+
   echo "$result"
 }
 
@@ -37,6 +37,6 @@ load_js_module() {
 is_screen_targeted() {
   local screen_name="$1"
   local target_screens_json="$2"
-  
-  echo "$target_screens_json" | jq -e --arg screen "$screen_name" '.[] | select(. == $screen)' > /dev/null
-} 
+
+  echo "$target_screens_json" | jq -e --arg screen "$screen_name" '.[] | select(. == $screen)' >/dev/null
+}

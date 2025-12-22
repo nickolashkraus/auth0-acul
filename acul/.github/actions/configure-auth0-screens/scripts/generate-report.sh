@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-# Generate Report Script  
+# Generate Report Script
 # Generates deployment summary table and final status messages for targeted screens
 # Usage: ./generate-report.sh
 
@@ -35,13 +35,19 @@ fi
 if [ ${#SUCCESS_SCREENS[@]} -eq 0 ]; then
   deployed_screens_output="None"
 else
-  deployed_screens_output=$(IFS=,; echo "${SUCCESS_SCREENS[*]}")
+  deployed_screens_output=$(
+    IFS=,
+    echo "${SUCCESS_SCREENS[*]}"
+  )
 fi
 
 if [ ${#FAILED_SCREENS[@]} -eq 0 ]; then
   failed_screens_output="None"
 else
-  failed_screens_output=$(IFS=,; echo "${FAILED_SCREENS[*]}")
+  failed_screens_output=$(
+    IFS=,
+    echo "${FAILED_SCREENS[*]}"
+  )
 fi
 
 #############################################
@@ -63,20 +69,22 @@ done < <(echo "$TARGETED_SCREENS_JSON" | jq -r '.[]?' 2>/dev/null || true)
 
 for screen_item in "${TARGETED_SCREENS_ARRAY[@]}"; do
   status_string="❓ Unknown"
-  
+
   # Check if screen was successful
   is_success=false
-  for s_screen in "${SUCCESS_SCREENS[@]}"; do 
-    if [[ "$s_screen" == "$screen_item" ]]; then 
-      is_success=true; break
+  for s_screen in "${SUCCESS_SCREENS[@]}"; do
+    if [[ "$s_screen" == "$screen_item" ]]; then
+      is_success=true
+      break
     fi
   done
-  
+
   # Check if screen failed
   is_failed=false
-  for f_screen in "${FAILED_SCREENS[@]}"; do 
-    if [[ "$f_screen" == "$screen_item" ]]; then 
-      is_failed=true; break
+  for f_screen in "${FAILED_SCREENS[@]}"; do
+    if [[ "$f_screen" == "$screen_item" ]]; then
+      is_failed=true
+      break
     fi
   done
 
@@ -85,14 +93,14 @@ for screen_item in "${TARGETED_SCREENS_ARRAY[@]}"; do
   elif [[ "$is_failed" == true ]]; then
     status_string="❌ Failed"
   fi
-  
+
   printf "│ %-14s │ %-7s │\n" "$screen_item" "$status_string"
 done
 
 echo "└────────────────┴────────────┘"
 
-echo "deployed_screens=${deployed_screens_output}" >> $GITHUB_OUTPUT
-echo "failed_screens=${failed_screens_output}" >> $GITHUB_OUTPUT
+echo "deployed_screens=${deployed_screens_output}" >>$GITHUB_OUTPUT
+echo "failed_screens=${failed_screens_output}" >>$GITHUB_OUTPUT
 
 #############################################
 # FINAL STATUS LOGIC
@@ -104,11 +112,11 @@ if [ ${#FAILED_SCREENS[@]} -gt 0 ]; then
     exit 1
   else
     echo "::warning::Some targeted screens failed, but at least one succeeded."
-    exit 1 
+    exit 1
   fi
 elif [ ${#SUCCESS_SCREENS[@]} -eq 0 ] && [ ${#TARGETED_SCREENS_ARRAY[@]} -gt 0 ]; then
   echo "::error::No screens were successfully configured out of the targeted screens."
   exit 1
 else
   echo "✅ All targeted screens configured successfully."
-fi 
+fi

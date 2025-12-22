@@ -130,11 +130,13 @@ try {
     );
 
     // Add all script tags
-    [reactVendorFile, vendorFile, commonFile, screenFile, mainFile].forEach((file) => {
-      if (file) {
-        html += `<script src="${baseUrl}/${file}" type="module"></script>\n`;
+    [reactVendorFile, vendorFile, commonFile, screenFile, mainFile].forEach(
+      (file) => {
+        if (file) {
+          html += `<script src="${baseUrl}/${file}" type="module"></script>\n`;
+        }
       }
-    });
+    );
 
     return html;
   };

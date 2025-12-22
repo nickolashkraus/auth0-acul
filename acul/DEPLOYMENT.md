@@ -130,11 +130,7 @@ After creating your CloudFront distribution and IAM role for GitHub Actions, upd
       "Principal": {
         "AWS": "arn:aws:iam::YOUR-ACCOUNT-ID:role/YOUR-GITHUB-ACTIONS-ROLE"
       },
-      "Action": [
-        "s3:PutObject",
-        "s3:DeleteObject",
-        "s3:ListBucket"
-      ],
+      "Action": ["s3:PutObject", "s3:DeleteObject", "s3:ListBucket"],
       "Resource": [
         "arn:aws:s3:::YOUR-BUCKET-NAME",
         "arn:aws:s3:::YOUR-BUCKET-NAME/*"
@@ -145,6 +141,7 @@ After creating your CloudFront distribution and IAM role for GitHub Actions, upd
 ```
 
 **What this policy does:**
+
 - First statement: Lets CloudFront read files to serve them publicly
 - Second statement: Lets GitHub Actions upload/delete files during deployment
 
@@ -206,7 +203,7 @@ GitHub Actions needs permission to upload files to your bucket.
 ```
 
 6. Name the role (e.g., "GitHubActions-LoginScreens")
-8. Copy the role ARN - you'll need it for GitHub
+7. Copy the role ARN - you'll need it for GitHub
 
 ---
 
@@ -216,15 +213,15 @@ GitHub Actions needs permission to upload files to your bucket.
 
 Go to **Settings → Secrets and variables → Actions** in your GitHub repo and add these secrets:
 
-| Secret | Value | Notes |
-|--------|-------|-------|
-| `AWS_S3_ARN` | `arn:aws:iam::123456789012:role/...` | The IAM role ARN from AWS |
-| `S3_BUCKET_NAME` | `my-company-login-screens` | Your S3 bucket name |
-| `AWS_REGION` | `us-east-1` | Where your bucket lives |
-| `S3_CDN_URL` | `https://d1234abcdef.cloudfront.net` | CloudFront domain OR S3 public URL (no trailing slash) |
-| `AUTH0_DOMAIN` | `dev-mycompany.auth0.com` | Your Auth0 domain |
-| `AUTH0_CLIENT_ID` | `abc123...` | M2M app client ID |
-| `AUTH0_CLIENT_SECRET` | `xyz789...` | M2M app secret |
+| Secret                | Value                                | Notes                                                  |
+| --------------------- | ------------------------------------ | ------------------------------------------------------ |
+| `AWS_S3_ARN`          | `arn:aws:iam::123456789012:role/...` | The IAM role ARN from AWS                              |
+| `S3_BUCKET_NAME`      | `my-company-login-screens`           | Your S3 bucket name                                    |
+| `AWS_REGION`          | `us-east-1`                          | Where your bucket lives                                |
+| `S3_CDN_URL`          | `https://d1234abcdef.cloudfront.net` | CloudFront domain OR S3 public URL (no trailing slash) |
+| `AUTH0_DOMAIN`        | `dev-mycompany.auth0.com`            | Your Auth0 domain                                      |
+| `AUTH0_CLIENT_ID`     | `abc123...`                          | M2M app client ID                                      |
+| `AUTH0_CLIENT_SECRET` | `xyz789...`                          | M2M app secret                                         |
 
 ### That's It
 
@@ -237,6 +234,7 @@ The workflow file is already in `.github/workflows/acul-deploy.yml`. It will run
 ### Automatic Deployment
 
 Just push to the `main` branch. The workflow will:
+
 1. Build your screens
 2. Upload them to S3
 3. Configure Auth0 to use them
@@ -256,7 +254,7 @@ Edit `.github/config/deploy_config.yml`:
 
 ```yaml
 default_screen_deployment_status:
-  "login-id": true        # This will deploy
+  "login-id": true # This will deploy
   "login-password": false # This won't deploy
 ```
 
@@ -267,22 +265,26 @@ Set everything to `false` and the workflow will skip building entirely.
 ## Troubleshooting
 
 **Auth0 errors?**
+
 - Double-check your `AUTH0_DOMAIN`, `AUTH0_CLIENT_ID`, and `AUTH0_CLIENT_SECRET`
 - Make sure the M2M app has all the required permissions
 - Verify your custom domain is active
 
 **S3 upload fails?**
+
 - Check the `AWS_S3_ARN` is correct
 - Verify the IAM role trusts `token.actions.githubusercontent.com`
 - Make sure the role has S3 write permissions
 
 **Screens don't load in Auth0?**
+
 - Check browser console for 404 errors
 - Verify `S3_CDN_URL` is correct
 - If using CloudFront, make sure it can access your S3 bucket
 - Confirm your custom domain is set up in Auth0
 
 **Assets not loading?**
+
 - Check if your S3 bucket policy allows public access (if not using CloudFront)
 - If using CloudFront, verify the distribution is deployed (not just "In Progress")
 - Look at the deployment logs to see what URLs were configured
@@ -292,6 +294,7 @@ Set everything to `false` and the workflow will skip building entirely.
 ## How Assets Work
 
 Each file gets a unique hash in its filename based on its content:
+
 - `login-id.abc123.js` instead of just `login-id.js`
 - When you change the file, the hash changes
 - Old versions stay cached, new versions get fresh URLs
