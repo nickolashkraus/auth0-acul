@@ -334,7 +334,7 @@ body {
   --ul-theme-color-input-labels-placeholders: var(--function-gray-600);
   --ul-theme-color-input-filled-text: var(--function-gray-800);
   --ul-theme-color-input-border: var(--function-gray-300);
-  --ul-theme-color-input-background: var(--function-khaki-50);
+  --ul-theme-color-input-background: var(--function-khaki-100);
   --ul-theme-color-icons: var(--function-gray-700);
   --ul-theme-color-error: var(--function-red-500);
   --ul-theme-color-success: var(--function-gray-800);
