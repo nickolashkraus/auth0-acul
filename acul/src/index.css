@@ -295,29 +295,44 @@ body {
  * :root variables defined above.
  */
 :root:has([data-theme="function"]) {
+  --function-orange-500: #c07858;
+  --function-red-500: #c05858;
+  --function-blue-gray: #6a7784;
+  --function-clay-500: #b05a36;
+
+  --function-gray-300: #b0b6b5;
+  --function-gray-600: #616867;
+  --function-gray-700: #838c8b;
+  --function-gray-800: #3c3d42;
+  --function-gray-850: #2a2b2f;
+
+  --function-khaki-50: #fef9ef;
+  --function-khaki-100: #f4efe6;
+  --function-khaki-150: #e0dcd3;
+
   /* Colors */
-  --ul-theme-color-primary-button: #c07858;
-  --ul-theme-color-primary-button-label: #fef9ef;
-  --ul-theme-color-secondary-button-border: #b0b6b5;
-  --ul-theme-color-secondary-button-label: #3c3d42;
-  --ul-theme-color-base-focus-color: #c07858;
-  --ul-theme-color-base-hover-color: #3c3d42;
-  --ul-theme-color-links-focused-components: #c07858;
-  --ul-theme-color-header: #3c3d42;
-  --ul-theme-color-body-text: #3c3d42;
-  --ul-theme-color-widget-background: #fef9ef;
-  --ul-theme-color-widget-border: #e0dcd3;
-  --ul-theme-color-input-labels-placeholders: #616867;
-  --ul-theme-color-input-filled-text: #3c3d42;
-  --ul-theme-color-input-border: #b0b6b5;
-  --ul-theme-color-input-background: #fef9ef;
-  --ul-theme-color-icons: #838c8b;
-  --ul-theme-color-error: #c05858;
-  --ul-theme-color-success: #3c3d42;
-  --ul-theme-color-warning: #e0dcd3;
+  --ul-theme-color-primary-button: var(--function-orange-500);
+  --ul-theme-color-primary-button-label: var(--function-khaki-50);
+  --ul-theme-color-secondary-button-border: var(--function-gray-300);
+  --ul-theme-color-secondary-button-label: var(--function-gray-800);
+  --ul-theme-color-base-focus-color: var(--function-orange-500);
+  --ul-theme-color-base-hover-color: var(--function-gray-800);
+  --ul-theme-color-links-focused-components: var(--function-orange-500);
+  --ul-theme-color-header: var(--function-gray-800);
+  --ul-theme-color-body-text: var(--function-gray-800);
+  --ul-theme-color-widget-background: var(--function-khaki-50);
+  --ul-theme-color-widget-border: var(--function-khaki-150);
+  --ul-theme-color-input-labels-placeholders: var(--function-gray-600);
+  --ul-theme-color-input-filled-text: var(--function-gray-800);
+  --ul-theme-color-input-border: var(--function-gray-300);
+  --ul-theme-color-input-background: var(--function-khaki-50);
+  --ul-theme-color-icons: var(--function-gray-700);
+  --ul-theme-color-error: var(--function-red-500);
+  --ul-theme-color-success: var(--function-gray-800);
+  --ul-theme-color-warning: var(--function-khaki-150);
   --ul-theme-color-captcha-widget-theme: light;
-  --ul-theme-color-spinner: #838c8b;
-  --ul-theme-color-qrcode-border: #e0dcd3;
+  --ul-theme-color-spinner: var(--function-gray-700);
+  --ul-theme-color-qrcode-border: var(--function-khaki-150);
 
   /* Borders */
   --ul-theme-border-buttons-style: rounded;
@@ -350,7 +365,7 @@ body {
 
   /* Page Background */
   --ul-theme-page-bg-page-layout: center;
-  --ul-theme-page-bg-background-color: #fef9ef;
+  --ul-theme-page-bg-background-color: var(--function-khaki-50);
   --ul-theme-page-bg-background-image-url: none;
 
   /* Widget */
