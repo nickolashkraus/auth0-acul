@@ -296,69 +296,69 @@ body {
  */
 :root:has([data-theme="function"]) {
   /* Colors */
-  /* --ul-theme-color-primary-button: #635dff; */
-  /* --ul-theme-color-primary-button-label: #ffffff; */
-  /* --ul-theme-color-secondary-button-border: #c9cace; */
-  /* --ul-theme-color-secondary-button-label: #1e212a; */
-  /* --ul-theme-color-base-focus-color: #635dff; */
-  /* --ul-theme-color-base-hover-color: #000000; */
-  /* --ul-theme-color-links-focused-components: #635dff; */
-  /* --ul-theme-color-header: #1e212a; */
-  /* --ul-theme-color-body-text: #1e212a; */
-  /* --ul-theme-color-widget-background: #ffffff; */
-  /* --ul-theme-color-widget-border: #c9cace; */
-  /* --ul-theme-color-input-labels-placeholders: #65676e; */
-  /* --ul-theme-color-input-filled-text: #000000; */
-  /* --ul-theme-color-input-border: #c9cace; */
-  /* --ul-theme-color-input-background: #ffffff; */
-  /* --ul-theme-color-icons: #65676e; */
-  /* --ul-theme-color-error: #d03c38; */
-  /* --ul-theme-color-success: #13a688; */
-  /* --ul-theme-color-warning: #ffdb5f; */
-  /* --ul-theme-color-captcha-widget-theme: dark; */
-  /* --ul-theme-color-spinner: #6f7780; */
-  /* --ul-theme-color-qrcode-border: #dee2e6; */
+  --ul-theme-color-primary-button: #c07858;
+  --ul-theme-color-primary-button-label: #fef9ef;
+  --ul-theme-color-secondary-button-border: #b0b6b5;
+  --ul-theme-color-secondary-button-label: #3c3d42;
+  --ul-theme-color-base-focus-color: #c07858;
+  --ul-theme-color-base-hover-color: #3c3d42;
+  --ul-theme-color-links-focused-components: #c07858;
+  --ul-theme-color-header: #3c3d42;
+  --ul-theme-color-body-text: #3c3d42;
+  --ul-theme-color-widget-background: #fef9ef;
+  --ul-theme-color-widget-border: #e0dcd3;
+  --ul-theme-color-input-labels-placeholders: #616867;
+  --ul-theme-color-input-filled-text: #3c3d42;
+  --ul-theme-color-input-border: #b0b6b5;
+  --ul-theme-color-input-background: #fef9ef;
+  --ul-theme-color-icons: #838c8b;
+  --ul-theme-color-error: #c05858;
+  --ul-theme-color-success: #3c3d42;
+  --ul-theme-color-warning: #e0dcd3;
+  --ul-theme-color-captcha-widget-theme: light;
+  --ul-theme-color-spinner: #838c8b;
+  --ul-theme-color-qrcode-border: #e0dcd3;
 
   /* Borders */
-  /* --ul-theme-border-buttons-style: rounded; */
-  /* --ul-theme-border-inputs-style: rounded; */
-  /* --ul-theme-border-button-border-weight: 1px; */
-  /* --ul-theme-border-button-border-radius: 3px; */
-  /* --ul-theme-border-input-border-weight: 1px; */
-  /* --ul-theme-border-input-border-radius: 3px; */
-  /* --ul-theme-border-widget-corner-radius: 5px; */
-  /* --ul-theme-border-widget-border-weight: 0px; */
-  /* --ul-theme-border-show-widget-shadow: 1; */
-  /* --ul-theme-border-links-border-radius: 3px; */
+  --ul-theme-border-buttons-style: rounded;
+  --ul-theme-border-inputs-style: rounded;
+  --ul-theme-border-button-border-weight: 1px;
+  --ul-theme-border-button-border-radius: 8px;
+  --ul-theme-border-input-border-weight: 1px;
+  --ul-theme-border-input-border-radius: 8px;
+  --ul-theme-border-widget-corner-radius: 8px;
+  --ul-theme-border-widget-border-weight: 0px;
+  --ul-theme-border-show-widget-shadow: 1;
+  --ul-theme-border-links-border-radius: 3px;
 
   /* Fonts */
-  /* --ul-theme-font-reference-text-size: 16px; */
-  /* --ul-theme-font-links-style: normal; */
-  /* --ul-theme-font-title-size: 1.5rem; */
-  /* --ul-theme-font-title-weight: 400; */
-  /* --ul-theme-font-subtitle-size: 0.875rem; */
-  /* --ul-theme-font-subtitle-weight: 400; */
-  /* --ul-theme-font-body-text-size: 0.875rem; */
-  /* --ul-theme-font-body-text-weight: 400; */
-  /* --ul-theme-font-buttons-text-size: 1rem; */
-  /* --ul-theme-font-buttons-text-weight: 400; */
-  /* --ul-theme-font-input-labels-size: 1rem; */
-  /* --ul-theme-font-input-labels-weight: 400; */
-  /* --ul-theme-font-links-size: 0.875rem; */
-  /* --ul-theme-font-links-weight: 700; */
-  /* --ul-theme-font-list-size: 1.025rem; */
+  --ul-theme-font-reference-text-size: 16px;
+  --ul-theme-font-links-style: normal;
+  --ul-theme-font-title-size: 1.5rem;
+  --ul-theme-font-title-weight: 400;
+  --ul-theme-font-subtitle-size: 0.875rem;
+  --ul-theme-font-subtitle-weight: 400;
+  --ul-theme-font-body-text-size: 0.875rem;
+  --ul-theme-font-body-text-weight: 400;
+  --ul-theme-font-buttons-text-size: 1rem;
+  --ul-theme-font-buttons-text-weight: 400;
+  --ul-theme-font-input-labels-size: 1rem;
+  --ul-theme-font-input-labels-weight: 400;
+  --ul-theme-font-links-size: 0.875rem;
+  --ul-theme-font-links-weight: 700;
+  --ul-theme-font-list-size: 1.025rem;
 
   /* Page Background */
-  /* --ul-theme-page-bg-page-layout: center; */
-  /* --ul-theme-page-bg-background-color: #000000; */
-  /* --ul-theme-page-bg-background-image-url: none; */
+  --ul-theme-page-bg-page-layout: center;
+  --ul-theme-page-bg-background-color: #fef9ef;
+  --ul-theme-page-bg-background-image-url: none;
 
   /* Widget */
-  /* --ul-theme-widget-logo-position: center; */
-  /* --ul-theme-widget-logo-url: "https://cdn.auth0.com/blog/auth0_by_okta_logo_black.png"; */
-  /* --ul-theme-widget-logo-height: 52px; */
-  /* --ul-theme-widget-header-text-alignment: center; */
-  /* --ul-theme-widget-social-buttons-layout: bottom; */
+  --ul-theme-widget-logo-position: center;
+  --ul-theme-widget-logo-url: none;
+  --ul-theme-widget-logo-height: 52px;
+  --ul-theme-widget-header-text-alignment: center;
+  --ul-theme-widget-social-buttons-layout: bottom;
 }
 
 /** UDS Dark Theme Variables **/
