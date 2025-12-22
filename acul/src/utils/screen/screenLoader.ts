@@ -4,6 +4,7 @@ import { lazy } from "react";
 
 const SCREEN_COMPONENTS: Record<string, React.ComponentType> = {
   login: lazy(() => import("@/screens/login")),
+  consent: lazy(() => import("@/screens/consent")),
 };
 
 export const getScreenComponent = (
