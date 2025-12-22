@@ -11,14 +11,14 @@
     "usage": "allow"
   },
   "prompt": {
-    "name": "login-id"
+    "name": "login"
   },
   "screen": {
     "links": {
       "reset_password": "https://each-beret.name/",
       "signup": "https://merry-tabletop.biz"
     },
-    "name": "login-id"
+    "name": "login"
   },
   "tenant": {
     "enabled_factors": ["otp"],
@@ -85,18 +85,7 @@
       "strategy": "auth0"
     },
     "locale": "es",
-    "state": "hLJ47LrwjYHjCx9tBWqOCdkweUFzYmFQ",
-    "errors": [
-      {
-        "code": "invalid_request",
-        "message": "The transaction has expired."
-      },
-      {
-        "code": "invalid-email-format",
-        "message": "Email is not valid",
-        "field": "username"
-      }
-    ]
+    "state": "hLJ47LrwjYHjCx9tBWqOCdkweUFzYmFQ"
   },
   "untrusted_data": {
     "authorization_params": {
