@@ -16,6 +16,8 @@ async function initializeApp() {
    */
   const rootElement = document.createElement("div");
   rootElement.id = "root";
+  // Activate custom Function theme overrides.
+  rootElement.setAttribute("data-theme", "function");
 
   document.body.appendChild(rootElement);
 

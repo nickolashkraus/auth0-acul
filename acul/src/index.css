@@ -274,6 +274,93 @@ body {
   min-height: 100vh;
 }
 
+/** Custom Function Theme **/
+/**
+ * The following defines toggleable overrides of the default Auth0 theme.
+ *
+ * USAGE
+ *
+ *   Add `data-theme="function"` to the root element to activate overrides.
+ *
+ *     ```
+ *     rootElement.setAttribute("data-theme", "function");
+ *     ```
+ *
+ *   See: acul/src/main.tsx
+ *
+ * Uncomment and modify any default Auth0 theme variables below to customize
+ * the appearance.
+ *
+ * NOTE: Using `:root:has()` ensures these overrides take precedence over base
+ * :root variables defined above.
+ */
+:root:has([data-theme="function"]) {
+  /* Colors */
+  /* --ul-theme-color-primary-button: #635dff; */
+  /* --ul-theme-color-primary-button-label: #ffffff; */
+  /* --ul-theme-color-secondary-button-border: #c9cace; */
+  /* --ul-theme-color-secondary-button-label: #1e212a; */
+  /* --ul-theme-color-base-focus-color: #635dff; */
+  /* --ul-theme-color-base-hover-color: #000000; */
+  /* --ul-theme-color-links-focused-components: #635dff; */
+  /* --ul-theme-color-header: #1e212a; */
+  /* --ul-theme-color-body-text: #1e212a; */
+  /* --ul-theme-color-widget-background: #ffffff; */
+  /* --ul-theme-color-widget-border: #c9cace; */
+  /* --ul-theme-color-input-labels-placeholders: #65676e; */
+  /* --ul-theme-color-input-filled-text: #000000; */
+  /* --ul-theme-color-input-border: #c9cace; */
+  /* --ul-theme-color-input-background: #ffffff; */
+  /* --ul-theme-color-icons: #65676e; */
+  /* --ul-theme-color-error: #d03c38; */
+  /* --ul-theme-color-success: #13a688; */
+  /* --ul-theme-color-warning: #ffdb5f; */
+  /* --ul-theme-color-captcha-widget-theme: dark; */
+  /* --ul-theme-color-spinner: #6f7780; */
+  /* --ul-theme-color-qrcode-border: #dee2e6; */
+
+  /* Borders */
+  /* --ul-theme-border-buttons-style: rounded; */
+  /* --ul-theme-border-inputs-style: rounded; */
+  /* --ul-theme-border-button-border-weight: 1px; */
+  /* --ul-theme-border-button-border-radius: 3px; */
+  /* --ul-theme-border-input-border-weight: 1px; */
+  /* --ul-theme-border-input-border-radius: 3px; */
+  /* --ul-theme-border-widget-corner-radius: 5px; */
+  /* --ul-theme-border-widget-border-weight: 0px; */
+  /* --ul-theme-border-show-widget-shadow: 1; */
+  /* --ul-theme-border-links-border-radius: 3px; */
+
+  /* Fonts */
+  /* --ul-theme-font-reference-text-size: 16px; */
+  /* --ul-theme-font-links-style: normal; */
+  /* --ul-theme-font-title-size: 1.5rem; */
+  /* --ul-theme-font-title-weight: 400; */
+  /* --ul-theme-font-subtitle-size: 0.875rem; */
+  /* --ul-theme-font-subtitle-weight: 400; */
+  /* --ul-theme-font-body-text-size: 0.875rem; */
+  /* --ul-theme-font-body-text-weight: 400; */
+  /* --ul-theme-font-buttons-text-size: 1rem; */
+  /* --ul-theme-font-buttons-text-weight: 400; */
+  /* --ul-theme-font-input-labels-size: 1rem; */
+  /* --ul-theme-font-input-labels-weight: 400; */
+  /* --ul-theme-font-links-size: 0.875rem; */
+  /* --ul-theme-font-links-weight: 700; */
+  /* --ul-theme-font-list-size: 1.025rem; */
+
+  /* Page Background */
+  /* --ul-theme-page-bg-page-layout: center; */
+  /* --ul-theme-page-bg-background-color: #000000; */
+  /* --ul-theme-page-bg-background-image-url: none; */
+
+  /* Widget */
+  /* --ul-theme-widget-logo-position: center; */
+  /* --ul-theme-widget-logo-url: "https://cdn.auth0.com/blog/auth0_by_okta_logo_black.png"; */
+  /* --ul-theme-widget-logo-height: 52px; */
+  /* --ul-theme-widget-header-text-alignment: center; */
+  /* --ul-theme-widget-social-buttons-layout: bottom; */
+}
+
 /** UDS Dark Theme Variables **/
 .dark {
   --background: oklch(0.145 0 0);
