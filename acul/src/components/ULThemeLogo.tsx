@@ -1,7 +1,8 @@
+import { FunctionLogo } from "@/assets/icons";
 import { cn } from "@/lib/utils";
 import { extractTokenValue } from "@/utils/helpers/tokenUtils";
 
-import { Avatar, AvatarImage } from "./ui/avatar";
+import { Avatar } from "./ui/avatar";
 
 export interface ULThemeLogoProps
   extends React.HTMLAttributes<HTMLSpanElement> {
@@ -19,36 +20,26 @@ export interface ULThemeLogoProps
   className?: string;
 }
 
-const ULThemeLogo = ({
-  imageUrl,
-  altText,
-  className,
-  ...rest
-}: ULThemeLogoProps) => {
+const ULThemeLogo = ({ altText, className, ...rest }: ULThemeLogoProps) => {
   // Using extractTokenValue utility to extract the logo URL, Logo Visible flags from CSS variable
-  const themedLogoSrcValue = extractTokenValue("--ul-theme-widget-logo-url");
   const isLogoHidden =
     extractTokenValue("--ul-theme-widget-logo-position") === "none";
   const themedStylesAvatar = "flex flex-wrap justify-widget-logo";
   const themedStylesAvatarImg = "h-(--height-widget-logo)";
-  const logoSrc = themedLogoSrcValue || imageUrl;
 
   return (
     !isLogoHidden && (
-      <div className={cn(themedStylesAvatar, className)}>
+      <div className={cn(themedStylesAvatar, className)} {...rest}>
         <Avatar className="size-auto rounded-none">
-          <AvatarImage
-            src={logoSrc}
-            alt={altText}
+          <FunctionLogo
+            role="img"
+            aria-label={altText}
             className={cn(themedStylesAvatarImg)}
-            loading="eager" // Default should load an image immediately
-            decoding="async" // Decode the image asynchronously
-            fetchPriority="high" // Fetch the image at a high priority
-            {...rest}
           />
         </Avatar>
       </div>
     )
   );
 };
+
 export default ULThemeLogo;
