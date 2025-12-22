@@ -62,9 +62,9 @@ export const ULThemePasswordField = ({
 
           buttonClassName
         )}
-        aria-label={showPassword ? "Hide password" : "Show password"}
+        aria-label={showPassword ? "Show password" : "Hide password"}
       >
-        {showPassword ? <EyeOff /> : <Eye />}
+        {showPassword ? <Eye /> : <EyeOff />}
       </TooltipTrigger>
       <TooltipContent
         sideOffset={0}
