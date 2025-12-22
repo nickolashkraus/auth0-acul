@@ -64,11 +64,13 @@ auth0 acul init "acul"
 ```
 
 Follow the prompts:
+
 1. Select **React (with ACUL React SDK)**.
 2. Select `login`.
 3. Install dependencies using `npm install`.
 
 Next:
+
 1. Navigate to `acul/`.
 2. Run `npm install` if dependencies were not installed.
 3. Start the local development server using `auth0 acul dev`.
