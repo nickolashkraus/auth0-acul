@@ -9,10 +9,10 @@ Login.
 ## How it works
 
 ACUL works by redirecting users to your own custom authentication screens
-(e.g., login, consent, etc.), which leverage the [Auth0 ACUL SDK][Auth0 ACUL
-SDK] for managing user interactions, instead of the default authentication
-screens. Custom authentication screens can be developed using any frontend
-framework and are hosted as static assets on a CDN.
+(e.g., login, consent, etc.), which leverage the
+[Auth0 ACUL SDK][Auth0 ACUL SDK] for managing user interactions, instead of the
+default authentication screens. Custom authentication screens can be developed
+using any frontend framework and are hosted as static assets on a CDN.
 
 ## Requirements
 
