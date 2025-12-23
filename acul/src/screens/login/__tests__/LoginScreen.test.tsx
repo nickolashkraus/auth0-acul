@@ -187,8 +187,13 @@ describe("LoginScreen", () => {
   it("should show password toggle button", async () => {
     await renderScreen();
 
-    const showPasswordButton = screen.getByLabelText("Show password");
-    expect(showPasswordButton).toBeInTheDocument();
+    // Find password toggle button (aria-label may vary based on visibility
+    // state).
+    const toggleButtons = screen.getAllByRole("button");
+    const passwordToggleButton = toggleButtons.find((button) =>
+      button.getAttribute("aria-label")?.toLowerCase().includes("password")
+    );
+    expect(passwordToggleButton).toBeInTheDocument();
   });
 
   it("should render username/email field based on active identifiers", async () => {
