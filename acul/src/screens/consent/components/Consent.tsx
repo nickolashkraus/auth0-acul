@@ -65,7 +65,7 @@ const ConsentContent = ({ onAccept, onDeny }: ConsentContentProps) => {
           aria-hidden="true"
         />
         <div className="flex flex-col gap-2">
-          <p className={cn("text-md")}>
+          <p>
             <strong>Biomarker range data on Function</strong>
           </p>
           <p>
