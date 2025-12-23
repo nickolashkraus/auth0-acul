@@ -1,4 +1,5 @@
 import ULThemeLink from "@/components/ULThemeLink";
+import { cn } from "@/lib/utils";
 
 import { useLoginManager } from "../hooks/useLoginManager";
 
@@ -9,9 +10,15 @@ function Footer() {
     return null;
   }
 
+  const baseTextStyles = cn(
+    "theme-universal:font-body",
+    "theme-universal:text-body-text",
+    "theme-universal:text-(length:--ul-theme-font-body-text-size)"
+  );
+
   return (
-    <div className="mt-6 text-left">
-      <span className="text-sm theme-universal:text-body-text theme-universal:text-(length:--ul-theme-font-body-text-size) theme-universal:font-body-text">
+    <div className="mt-6 text-center">
+      <span className={cn("text-sm", baseTextStyles)}>
         {texts?.signupActionText || locales?.footer?.signupActionText}{" "}
       </span>
       <ULThemeLink href={signupLink}>
