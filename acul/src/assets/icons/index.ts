@@ -1,4 +1,5 @@
 export * from "./AppleIcon";
+export * from "./BarChartIcon";
 export * from "./CheckMarkShieldAccent";
 export * from "./CheckMarkShieldMask";
 export * from "./DefaultConnectionIcon";
