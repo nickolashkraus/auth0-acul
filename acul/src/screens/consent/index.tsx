@@ -8,6 +8,9 @@ import { useConsentManager } from "./hooks/useConsentManager";
 function ConsentScreen() {
   const { consent, handleAccept, handleDeny } = useConsentManager();
 
+  // Set <title> HTML element for page.
+  document.title = "Consent";
+
   applyAuth0Theme(consent);
 
   return (
