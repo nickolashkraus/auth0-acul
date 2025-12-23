@@ -7,6 +7,14 @@
           "variants": ["default", "with-errors"]
         }
       }
+    },
+    {
+      "consent": {
+        "consent": {
+          "path": "/screens/consent/consent",
+          "variants": ["default", "with-errors"]
+        }
+      }
     }
   ]
 }
