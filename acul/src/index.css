@@ -25,6 +25,11 @@ Created to support alignment related utlities like justify, text-align etc with 
     text-align: var(--ul-theme-widget-header-text-alignment);
   }
 
+  /** Custom Utility to apply title font **/
+  .font-title {
+    font-family: var(--font-family-title, var(--font-title));
+  }
+
   /** Custom Utility to handle logo alignment(left, right, center) **/
   .justify-widget-logo {
     justify-content: var(--ul-theme-widget-logo-position);
@@ -119,6 +124,11 @@ Created to support alignment related utlities like justify, text-align etc with 
   --font-weight-button: var(--ul-theme-font-buttons-text-weight);
   --font-weight-input-label: var(--ul-theme-font-input-labels-weight);
   --font-weight-link: var(--ul-theme-font-links-weight);
+
+  /* Font Families */
+  --font-family-title: var(--font-title);
+  --font-family-body: var(--font-body);
+  --font-family-mono: var(--font-mono);
 
   /** Font Sizes **/
   --font-size-list-title: var(--ul-theme-font-list-text-size);
@@ -309,7 +319,7 @@ body {
   --function-khaki-50: #fef9ef;
   --function-khaki-100: #f4efe6;
   --function-khaki-150: #e0dcd3;
-  --function-font-title: "Financier Display", "Times New Roman", serif;
+  --function-font-title: "Financier Display", ui-serif, serif;
   --function-font-body: "Inter", ui-sans-serif, sans-serif;
   --function-font-mono: "DM Mono", ui-monospace, monospace;
   --font-title: var(--function-font-title);
@@ -358,7 +368,7 @@ body {
   /* Fonts */
   --ul-theme-font-reference-text-size: 16px;
   --ul-theme-font-links-style: normal;
-  --ul-theme-font-title-size: 1.5rem;
+  --ul-theme-font-title-size: 2rem;
   --ul-theme-font-title-weight: 400;
   --ul-theme-font-subtitle-size: 0.875rem;
   --ul-theme-font-subtitle-weight: 400;
@@ -428,7 +438,7 @@ body {
 
 @font-face {
   font-family: "DM Mono";
-  src: url("/assets/fonts/DMMono-Light.woff2") format("woff2");
+  src: url("./assets/fonts/DMMono-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: optional;
@@ -436,7 +446,7 @@ body {
 
 @font-face {
   font-family: "DM Mono";
-  src: url("/assets/fonts/DMMono-Regular.woff2") format("woff2");
+  src: url("./assets/fonts/DMMono-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: optional;
@@ -444,7 +454,7 @@ body {
 
 @font-face {
   font-family: "DM Mono";
-  src: url("/assets/fonts/DMMono-Medium.woff2") format("woff2");
+  src: url("./assets/fonts/DMMono-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: optional;
@@ -452,7 +462,7 @@ body {
 
 @font-face {
   font-family: "Financier Display";
-  src: url("/assets/fonts/FinancierDisplay-Light.woff2") format("woff2");
+  src: url("./assets/fonts/FinancierDisplay-Light.woff2") format("woff2");
   font-weight: 200;
   font-style: normal;
   font-display: optional;
@@ -460,7 +470,7 @@ body {
 
 @font-face {
   font-family: "Financier Display";
-  src: url("/assets/fonts/FinancierDisplay-LightItalic.woff2") format("woff2");
+  src: url("./assets/fonts/FinancierDisplay-LightItalic.woff2") format("woff2");
   font-weight: 200;
   font-style: italic;
   font-display: optional;
@@ -468,7 +478,7 @@ body {
 
 @font-face {
   font-family: "Financier Display";
-  src: url("/assets/fonts/FinancierDisplay-Regular.woff2") format("woff2");
+  src: url("./assets/fonts/FinancierDisplay-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: optional;
@@ -476,7 +486,7 @@ body {
 
 @font-face {
   font-family: "Financier Display";
-  src: url("/assets/fonts/FinancierDisplay-Medium.woff2") format("woff2");
+  src: url("./assets/fonts/FinancierDisplay-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: optional;
@@ -484,7 +494,7 @@ body {
 
 @font-face {
   font-family: "Financier Display";
-  src: url("/assets/fonts/FinancierDisplay-Semibold.woff2") format("woff2");
+  src: url("./assets/fonts/FinancierDisplay-Semibold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: optional;
@@ -492,7 +502,7 @@ body {
 
 @font-face {
   font-family: "Financier Display";
-  src: url("/assets/fonts/FinancierDisplay-Bold.woff2") format("woff2");
+  src: url("./assets/fonts/FinancierDisplay-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: optional;
@@ -500,7 +510,7 @@ body {
 
 @font-face {
   font-family: "Inter";
-  src: url("/assets/fonts/Inter-Light.woff2") format("woff2");
+  src: url("./assets/fonts/Inter-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: optional;
@@ -508,7 +518,7 @@ body {
 
 @font-face {
   font-family: "Inter";
-  src: url("/assets/fonts/Inter-Regular.woff2") format("woff2");
+  src: url("./assets/fonts/Inter-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: optional;
@@ -516,7 +526,7 @@ body {
 
 @font-face {
   font-family: "Inter";
-  src: url("/assets/fonts/Inter-Medium.woff2") format("woff2");
+  src: url("./assets/fonts/Inter-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: optional;
@@ -524,7 +534,7 @@ body {
 
 @font-face {
   font-family: "Inter";
-  src: url("/assets/fonts/Inter-SemiBold.woff2") format("woff2");
+  src: url("./assets/fonts/Inter-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: optional;
@@ -532,7 +542,7 @@ body {
 
 @font-face {
   font-family: "Inter";
-  src: url("/assets/fonts/Inter-Bold.woff2") format("woff2");
+  src: url("./assets/fonts/Inter-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: optional;
