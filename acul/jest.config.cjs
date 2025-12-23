@@ -13,5 +13,9 @@ module.exports = {
   transformIgnorePatterns: [
     "/node_modules/(?!(@auth0/auth0-acul-react|@auth0/auth0-acul-js|friendly-challenge)/)",
   ],
+  setupFiles: ["<rootDir>/src/test/consoleFilter.js"],
   setupFilesAfterEnv: ["<rootDir>/src/test/setup.ts"],
+  // Suppress specific console warnings from third-party libraries.
+  silent: false,
+  verbose: false,
 };
