@@ -16,7 +16,6 @@ export const FunctionLogo = (props: SVGProps<SVGSVGElement>) => (
       y="0"
       width="80"
       height="80"
-      maskType="luminance"
     >
       <path
         d="M40 0C62.094 0 80 17.9131 80 40C80 62.094 62.0869 80 40 80C17.9131 80.0071 0 62.094 0 40C0 17.9131 17.9131 0 40 0Z"
