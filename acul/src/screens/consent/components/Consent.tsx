@@ -61,11 +61,11 @@ const ConsentContent = ({ onAccept, onDeny }: ConsentContentProps) => {
       <div className="flex items-start gap-3 m-auto max-w-xs">
         <BarChartIcon
           color="var(--function-orange-500)"
-          className="shrink-0 size-4 theme-universal:text-icons"
+          className="shrink-0 size-4 mt-[2px] theme-universal:text-icons"
           aria-hidden="true"
         />
         <div className="flex flex-col gap-2">
-          <p>
+          <p className="leading-5">
             <strong>Biomarker range data on Function</strong>
           </p>
           <p>

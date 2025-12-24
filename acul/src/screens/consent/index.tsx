@@ -15,7 +15,7 @@ function ConsentScreen() {
 
   return (
     <ULThemePageLayout className="theme-universal">
-      <ULThemeCard className="w-full max-w-[520px] gap-6">
+      <ULThemeCard className="w-full max-w-[400px] gap-0">
         <ConsentContent onAccept={handleAccept} onDeny={handleDeny} />
       </ULThemeCard>
     </ULThemePageLayout>
