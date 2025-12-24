@@ -319,9 +319,11 @@ body {
   --function-khaki-50: #fef9ef;
   --function-khaki-100: #f4efe6;
   --function-khaki-150: #e0dcd3;
+
   --function-font-title: "Financier Display", ui-serif, serif;
   --function-font-body: "Inter", ui-sans-serif, sans-serif;
   --function-font-mono: "DM Mono", ui-monospace, monospace;
+
   --font-title: var(--function-font-title);
   --font-body: var(--function-font-body);
   --font-body-text: var(--function-font-body);

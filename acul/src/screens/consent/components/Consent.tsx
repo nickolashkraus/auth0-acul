@@ -106,7 +106,7 @@ const ConsentContent = ({ onAccept, onDeny }: ConsentContentProps) => {
             Agree
           </ULThemeButton>
           <ULThemeButton
-            className="w-full"
+            className="w-full bg-[var(--function-khaki-50)]"
             variant="outline"
             onClick={() => handleAction("deny")}
             disabled={isSubmitting !== null}
