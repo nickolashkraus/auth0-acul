@@ -7,7 +7,7 @@ default_screen_deployment_status:
   "login-id": false
   "login-password": false
   "email-identifier-challenge": false
-  "login": false
+  "login": true
   "login-passwordless-email-code": false
   "login-passwordless-sms-otp": false
   "mfa-begin-enroll-options": false
@@ -40,7 +40,7 @@ default_screen_deployment_status:
   # "brute-force-protection-unblock": false
   # "brute-force-protection-unblock-failure": false
   # "brute-force-protection-unblock-success": false
-  # "consent": false
+  "consent": true
   # "customized-consent": false
   # "device-code-activation": false
   # "device-code-activation-allowed": false
