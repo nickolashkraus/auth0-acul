@@ -97,7 +97,46 @@ To test the login flow, run `auth0 test login`.
 
 ## Deploying ACUL for an Auth0 tenant
 
-TBD
+### Deploy via the command line
+
+#### 1. Build project (`tsc` + `vite`)
+
+```bash
+cd acul/
+npm install && npm run build
+```
+
+This compiles the TypeScript and creates optimized bundles for each screen in
+the `dist/` directory.
+
+#### 2. Upload assets to S3
+
+```bash
+aws s3 sync ./dist s3://$BUCKET/ \
+  --delete \
+  --cache-control "max-age=31536000,public,immutable"
+```
+
+#### 3. Configure Auth0 screens via Auth0 CLI
+
+```bash
+auth0 login
+```
+
+Run the deploy scripts (generated via `auth0 acul init`).
+
+```bash
+export CDN_URL=$S3_URL
+export DEPLOY_CONFIG_PATH=".github/config/deploy_config.yml"
+```
+
+```bash
+source .github/actions/configure-auth0-screens/scripts/setup-and-config.sh
+.github/actions/configure-auth0-screens/scripts/process-screen.sh 'login'
+.github/actions/configure-auth0-screens/scripts/process-screen.sh 'consent'
+```
+
+**NOTE**: Requires `jq`, `yq`, and AWS CLI.
 
 ## References
 
