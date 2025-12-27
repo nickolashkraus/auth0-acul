@@ -1,3 +1,14 @@
+/**
+ * This file contains all theme and branding customizations for ACUL.
+ * 
+ * CSS variables in the @theme inline block are used by the base components.
+ * CSS variables prefixed with `--ul-theme-` are set to the default Universal
+ * Login styling and are automatically overridden by the Branding theme set in
+ * your tenant at runtime.
+ *
+ * To learn more, see src/utils/theme/themeEngine.ts.
+ **/
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -284,8 +295,9 @@ body {
   min-height: 100vh;
 }
 
-/** Custom Function Theme **/
 /**
+ * Custom Function Theme
+ *
  * The following defines toggleable overrides of the default Auth0 theme.
  *
  * USAGE

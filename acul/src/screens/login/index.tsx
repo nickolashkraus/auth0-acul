@@ -2,7 +2,6 @@ import ULThemeCard from "@/components/ULThemeCard";
 import ULThemePageLayout from "@/components/ULThemePageLayout";
 import ULThemeSeparator from "@/components/ULThemeSeparator";
 import { extractTokenValue } from "@/utils/helpers/tokenUtils";
-import { applyAuth0Theme } from "@/utils/theme/themeEngine";
 
 import AlternativeLogins from "./components/AlternativeLogins";
 import Footer from "./components/Footer";
@@ -12,14 +11,15 @@ import { useLoginManager } from "./hooks/useLoginManager";
 
 function LoginScreen() {
   // Extracting attributes from hook made out of LoginInstance class of Auth0 React ACUL SDK
-  const { login, texts, locales, alternateConnections } = useLoginManager();
+  const { texts, locales, alternateConnections } = useLoginManager();
 
   const showSeparator = alternateConnections && alternateConnections.length > 0;
 
   const separatorText = texts?.separatorText || locales?.page?.orText;
   document.title = texts?.pageTitle || locales?.page?.title;
 
-  applyAuth0Theme(login);
+  // Do NOT apply Branding theme set via tenant (Branding > Universal Login).
+  // applyAuth0Theme(login);
 
   const socialLoginAlignment = extractTokenValue(
     "--ul-theme-widget-social-buttons-layout"
