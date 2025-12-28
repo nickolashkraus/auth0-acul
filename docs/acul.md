@@ -111,12 +111,23 @@ npm install && npm run build
 This compiles the TypeScript and creates optimized bundles for each screen in
 the `dist/` directory.
 
-#### 2. Upload assets to S3
+#### 2. Upload assets
+
+**Amazon S3**
 
 ```bash
 aws s3 sync ./dist s3://$BUCKET/ \
   --delete \
   --cache-control "max-age=31536000,public,immutable"
+```
+
+**Google Cloud Storage**
+
+```bash
+gcloud storage rsync ./dist gs://$BUCKET/ \
+  --recursive \
+  --delete-unmatched-destination-objects \
+  --cache-control="max-age=31536000,public,immutable"
 ```
 
 #### 3. Configure Auth0 screens via Auth0 CLI
@@ -128,9 +139,12 @@ auth0 login
 Run the deploy scripts (generated via `auth0 acul init`).
 
 ```bash
-export CDN_URL=$S3_URL
+export CDN_URL=$URL
 export DEPLOY_CONFIG_PATH=".github/config/deploy_config.yml"
 ```
+
+**NOTE**: `$URL` is the URL of the Amazon CloudFront distribution, Amazon S3 or
+Google Cloud CDN.
 
 ```bash
 source .github/actions/configure-auth0-screens/scripts/setup-and-config.sh
