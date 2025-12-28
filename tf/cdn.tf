@@ -51,15 +51,12 @@ resource "google_compute_global_address" "default" {
 # or more backend services.
 #
 # See: https://docs.cloud.google.com/load-balancing/docs/https#forwarding-rule
-#
-# NOTE: To support HTTPS, set port_range to 443, use the
-# google_compute_target_https_proxy resource, and configure TLS certificates.
 resource "google_compute_global_forwarding_rule" "default" {
-  name                  = "auth0-acul-http-forwarding-rule"
-  target                = google_compute_target_http_proxy.default.id
+  name                  = "auth0-acul-https-forwarding-rule"
+  target                = google_compute_target_https_proxy.default.id
   ip_address            = google_compute_global_address.default.address
   load_balancing_scheme = "EXTERNAL_MANAGED"
-  port_range            = "80"
+  port_range            = "443"
   ip_protocol           = "TCP"
 }
 
@@ -68,9 +65,18 @@ resource "google_compute_global_forwarding_rule" "default" {
 # connections from the load balancer to the backends.
 #
 # See: https://docs.cloud.google.com/load-balancing/docs/https#target-proxies
-resource "google_compute_target_http_proxy" "default" {
-  name    = "auth0-acul-http-proxy"
-  url_map = google_compute_url_map.default.id
+resource "google_compute_target_https_proxy" "default" {
+  name             = "auth0-acul-https-proxy"
+  url_map          = google_compute_url_map.default.id
+  ssl_certificates = [google_compute_managed_ssl_certificate.default.id]
+}
+
+# Managed TLS certificate for the HTTPS load balancer.
+resource "google_compute_managed_ssl_certificate" "default" {
+  name = "auth0-acul-ssl-cert"
+  managed {
+    domains = [var.cdn_domain]
+  }
 }
 
 # Configures routing for the Application Load Balancer to the Google Cloud Storage

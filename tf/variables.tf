@@ -8,3 +8,8 @@ variable "region" {
   type        = string
   default     = "us-central1"
 }
+
+variable "cdn_domain" {
+  description = "Custom domain for the Cloud CDN endpoint (managed certificate)"
+  type        = string
+}
