@@ -83,6 +83,8 @@ Additional screens can be added with the following command:
 auth0 acul screen add <screen-name>
 ```
 
+**NOTE**: Only a subset of all available screen have been implemented.
+
 ### Launch the Universal Login (UL) Context Inspector
 
 The Auth0 Universal Login (UL) Context Inspector is a developer tool designed
@@ -137,6 +139,32 @@ source .github/actions/configure-auth0-screens/scripts/setup-and-config.sh
 ```
 
 **NOTE**: Requires `jq`, `yq`, and AWS CLI.
+
+### Deploy via GitHub Actions
+
+The ACUL production deployment workflow builds and deploys ACUL screens and
+configures a tenant to use them (see `.github/`).
+
+It uses GitHub Actions to:
+
+**Build screen asset bundles**
+
+1. The workflow reads the `.github/config/deploy_config.yml` file to determine which
+   screens are marked for deployment (ex. `"login": true`).
+2. If deployment targets are found, the workflow builds ACUL assets with Vite,
+   which outputs the bundled assets to `/dist`.
+
+**Upload assets to AWS S3**
+
+1. The workflow authenticates with AWS using OpenID Connect (OIDC).
+2. Uploads the contents of `/dist` to the specified S3 bucket.
+
+**Configure the Auth0 tenant**
+
+1. The workflow uses Auth0 CLI with an M2M application to configure the screens
+   for the tenant. It maps each screen to the correct Auth0 screen using the
+   `config/screen-to-prompt-mapping.js` file and updates the Auth0 screen
+   customization settings to point to the assets via Amazon CloudFront or S3.
 
 ## References
 
