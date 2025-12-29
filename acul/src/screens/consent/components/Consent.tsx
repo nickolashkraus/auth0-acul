@@ -77,7 +77,7 @@ const ConsentContent = ({ onAccept, onDeny }: ConsentContentProps) => {
 
       <hr className={cn("border-t border-[var(--function-khaki-150)]")} />
 
-      <div className={cn("m-auto max-w-xs text-justify", baseTextStyles)}>
+      <div className={cn("m-auto max-w-xs", baseTextStyles)}>
         <p>
           Please Note: This does not authorize <strong>ChatGPT</strong> to
           receive any other lab data from Function.
