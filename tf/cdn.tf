@@ -37,15 +37,14 @@ resource "google_storage_bucket" "default" {
   }
 }
 
-
-# Make Google Cloud Storage bucket public. This is the recommended approach for public
-# content. With this setting, anyone on the internet can view and list your
+# Make Google Cloud Storage bucket public. This is the recommended approach for
+# public content. With this setting, anyone on the internet can view and list
 # objects and their metadata, excluding ACLs. To reduce the risk of unintended
-# data exposure, you should typically dedicate specific Google Cloud Storage buckets
-# for public objects.
+# data exposure, it is recommended to dedicate specific Google Cloud Storage
+# buckets for public objects.
 #
-# IMPORTANT: When objects are served from a public Google Cloud Storage bucket, by
-# default they have a Cache-Control: public, max-age=3600 response header
+# IMPORTANT: When objects are served from a public Google Cloud Storage bucket,
+# by default they have a Cache-Control: public, max-age=3600 response header
 # applied. This allows the objects to be cached when Cloud CDN is enabled.
 resource "google_storage_bucket_iam_member" "default" {
   bucket = google_storage_bucket.default.name
@@ -73,7 +72,6 @@ resource "google_compute_global_forwarding_rule" "default" {
   ip_protocol           = "TCP"
 }
 
-
 # A target proxy terminates incoming connections from clients and creates new
 # connections from the load balancer to the backends.
 #
@@ -92,8 +90,8 @@ resource "google_compute_managed_ssl_certificate" "default" {
   }
 }
 
-# Configures routing for the Application Load Balancer to the Google Cloud Storage
-# bucket.
+# Configures routing for the Application Load Balancer to the Google Cloud
+# Storage bucket.
 #
 # See: https://cloud.google.com/load-balancing/docs/url-map-concepts
 resource "google_compute_url_map" "default" {
@@ -101,9 +99,8 @@ resource "google_compute_url_map" "default" {
   default_service = google_compute_backend_bucket.default.id
 }
 
-
-# Global external Application Load Balancer using Google Cloud Storage bucket as the
-# backend with Cloud CDN enabled.
+# Global external Application Load Balancer using Google Cloud Storage bucket
+# as the backend with Cloud CDN enabled.
 #
 # See: https://cloud.google.com/load-balancing/docs/backend-service
 resource "google_compute_backend_bucket" "default" {
