@@ -35,6 +35,9 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+# Add favicon to <head> tags.
+JSON_CONTENT=$(echo "$JSON_CONTENT" | jq --arg url "${CDN_BASE_URL}/favicon.ico" '.head_tags += [{ tag: "link", attributes: { rel: "icon", type: "image/x-icon", href: $url } }]')
+
 # Add CSS files
 for css_file in "${SHARED_CSS_FILES[@]}" "${SCREEN_CSS_FILES[@]}"; do
   css_basename=$(basename "$css_file")
