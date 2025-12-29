@@ -24,7 +24,7 @@ resource "google_storage_bucket" "default" {
   force_destroy = true
 
   # The Auth0 login page loads JavaScript as ES modules. Browsers treat module
-  # loads as cross‑origin requests and require CORS headers. If your assets are
+  # loads as cross-origin requests and require CORS headers. If your assets are
   # served from a different origin (different domain, scheme, or port) than
   # your Auth0 tenant's custom domain, the browser will block them unless the
   # asset origin explicitly allows your Auth0 domain with
