@@ -180,6 +180,19 @@ It uses GitHub Actions to:
    `config/screen-to-prompt-mapping.js` file and updates the Auth0 screen
    customization settings to point to the assets via Amazon CloudFront or S3.
 
+## Troubleshooting
+
+### `Cross-Origin Request Blocked: The Same Origin Policy disallows reading the
+remote resource at [...].`
+
+If the screen assets are hosted at an origin that is not the same as the custom
+domain for your Auth0 tenant, the browser will refuse to load the assets, since
+loading ES modules enforces CORS[^1].
+
+To fix the issue, the origin must send the required CORS headers to the Auth0
+page's origin. This is accomplished by enabling CORS on the bucket and ensuring
+the CDN forwards the CORS response headers.
+
 ## References
 
 - [ACUL | Overview][ACUL | Overview]
@@ -187,6 +200,12 @@ It uses GitHub Actions to:
 - [ACUL | Quickstart][ACUL | Quickstart]
 - [ACUL | Development Workflow][ACUL | Development Workflow]
 - [ACUL | Deployment Workflow][ACUL | Deployment Workflow]
+
+[^1]: The Auth0 login page loads JavaScript as ES modules. Browsers treat
+module loads as cross‑origin requests and require CORS headers. If your assets
+are served from a different origin (different domain, scheme, or port) than
+your Auth0 tenant's custom domain, the browser will block them unless the asset
+origin explicitly allows your Auth0 domain with `Access-Control-Allow-Origin`.
 
 [ACUL | Overview]: https://auth0.com/docs/customize/login-pages/advanced-customizations
 [ACUL | Configure ACUL]: https://auth0.com/docs/customize/login-pages/advanced-customizations/configure

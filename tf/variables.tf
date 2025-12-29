@@ -13,3 +13,8 @@ variable "cdn_domain" {
   description = "Custom domain for the Cloud CDN endpoint (managed certificate)"
   type        = string
 }
+
+variable "auth0_domain" {
+  description = "Auth0 domain allowed for CORS (e.g., auth.dev.functionhealth.com)"
+  type        = string
+}
