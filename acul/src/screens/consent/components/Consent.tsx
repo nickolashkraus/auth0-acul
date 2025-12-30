@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { useUser } from "@auth0/auth0-acul-react/consent";
+import { useClient, useUser } from "@auth0/auth0-acul-react/consent";
 
 import { BarChartIcon } from "@/assets/icons";
 import { ULThemeButton } from "@/components/ULThemeButton";
@@ -13,9 +13,10 @@ type ConsentContentProps = {
 };
 
 const ConsentContent = ({ onAccept, onDeny }: ConsentContentProps) => {
-  // Hook to access user information and profile data.
-  // See: https://auth0.com/docs/libraries/acul/react-sdk/API-Reference/Screens/consent#param-use-user
+  // Context Hooks
+  // See: https://auth0.com/docs/libraries/acul/react-sdk/API-Reference/Screens/consent
   const user = useUser();
+  const client = useClient();
 
   const [isSubmitting, setIsSubmitting] = useState<"accept" | "deny" | null>(
     null
@@ -52,8 +53,8 @@ const ConsentContent = ({ onAccept, onDeny }: ConsentContentProps) => {
         </p>
       )}
       <p className={cn("m-auto max-w-xs text-center text-xl")}>
-        <strong>ChatGPT</strong> would like your permission to receive and use
-        the following information:
+        <strong>{client?.name}</strong> would like your permission to receive
+        and use the following information:
       </p>
 
       <hr className={cn("border-t border-[var(--function-khaki-150)]")} />
@@ -79,16 +80,16 @@ const ConsentContent = ({ onAccept, onDeny }: ConsentContentProps) => {
 
       <div className={cn("m-auto max-w-xs", baseTextStyles)}>
         <p>
-          Please Note: This does not authorize <strong>ChatGPT</strong> to
-          receive any other lab data from Function.
+          Please Note: This does not authorize <strong>{client?.name}</strong>{" "}
+          to receive any other lab data from Function.
         </p>
         <br />
         <p>
-          You can disconnect at any time in your <strong>ChatGPT</strong>{" "}
-          account settings under "Apps"; however, <strong>ChatGPT</strong> will
-          process any information you share as agreed between you and{" "}
-          <strong>ChatGPT</strong>. For full information about how Function
-          Health processes your information, see{" "}
+          You can disconnect at any time in your <strong>{client?.name}</strong>{" "}
+          account settings under "Apps"; however,{" "}
+          <strong>{client?.name}</strong> will process any information you share
+          as agreed between you and <strong>{client?.name}</strong>. For full
+          information about how Function Health processes your information, see{" "}
           <ULThemeLink href="https://www.functionhealth.com/legal/privacy-policy">
             Function's Privacy Policy
           </ULThemeLink>
