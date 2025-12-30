@@ -14,7 +14,7 @@ variable "cdn_domain" {
   type        = string
 }
 
-variable "auth0_domain" {
-  description = "Auth0 domain allowed for CORS (e.g., auth.dev.functionhealth.com)"
-  type        = string
+variable "auth0_domains" {
+  description = "Auth0 domains allowed for CORS (e.g., auth.dev.functionhealth.com)"
+  type        = list(string)
 }

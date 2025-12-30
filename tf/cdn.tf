@@ -30,7 +30,7 @@ resource "google_storage_bucket" "default" {
   # asset origin explicitly allows your Auth0 domain with
   # `Access-Control-Allow-Origin`.
   cors {
-    origin          = ["https://${var.auth0_domain}"]
+    origin          = [for domain in var.auth0_domains : "https://${domain}"]
     method          = ["GET", "HEAD", "OPTIONS"]
     response_header = ["Content-Type", "Cache-Control"]
     max_age_seconds = 3600
