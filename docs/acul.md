@@ -182,8 +182,12 @@ It uses GitHub Actions to:
 
 ## Troubleshooting
 
-### `Cross-Origin Request Blocked: The Same Origin Policy disallows reading the
-remote resource at [...].`
+### Cross-Origin Request Blocked
+
+```
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the
+remote resource at [...].
+```
 
 If the screen assets are hosted at an origin that is not the same as the custom
 domain for your Auth0 tenant, the browser will refuse to load the assets, since
