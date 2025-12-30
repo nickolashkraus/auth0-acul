@@ -185,8 +185,7 @@ It uses GitHub Actions to:
 ### Cross-Origin Request Blocked
 
 ```
-Cross-Origin Request Blocked: The Same Origin Policy disallows reading the
-remote resource at [...].
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at [...].
 ```
 
 If the screen assets are hosted at an origin that is not the same as the custom
