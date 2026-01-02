@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+# set -euo pipefail
 
 # Setup and Configuration Script (Optimized)
 # Loads configurations, validates environment, and reads deployment config

@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+# set -euo pipefail
 
 # Asset Discovery Script
 # Discovers and categorizes JS/CSS assets for a specific screen

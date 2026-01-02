@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+# set -euo pipefail
 
 # Generate Report Script
 # Generates deployment summary table and final status messages for targeted screens

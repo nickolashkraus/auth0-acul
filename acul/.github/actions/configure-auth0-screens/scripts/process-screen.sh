@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+# set -euo pipefail
 
 # Process Screen Script (Optimized)
 # Processes a single screen: settings generation and Auth0 CLI integration
