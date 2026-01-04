@@ -7,6 +7,7 @@ export * from "./DeviceGlobeAccent";
 export * from "./DeviceGlobeMask";
 export * from "./ErrorCircleIcon";
 export * from "./FunctionLogoV1";
+export * from "./FunctionLogoV2";
 export * from "./GooglePlayIcon";
 export * from "./LockHeavyAccent";
 export * from "./LockHeavyMask";
