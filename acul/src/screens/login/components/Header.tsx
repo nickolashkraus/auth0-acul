@@ -12,9 +12,9 @@ function Header() {
 
   return (
     <>
-      <ULThemeLogo altText={logoAltText}></ULThemeLogo>
+      <ULThemeLogo altText={logoAltText} className="mb-6"></ULThemeLogo>
       <ULThemeTitle>{texts?.title || locales?.heading?.title}</ULThemeTitle>
-      <ULThemeSubtitle className="mb-6">
+      <ULThemeSubtitle className="mb-6 text-[var(--function-gray-600)]">
         {texts?.description || locales?.heading?.description}
       </ULThemeSubtitle>
     </>
