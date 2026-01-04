@@ -90,7 +90,10 @@ const ConsentContent = ({ onAccept, onDeny }: ConsentContentProps) => {
           <strong>{client?.name}</strong> will process any information you share
           as agreed between you and <strong>{client?.name}</strong>. For full
           information about how Function Health processes your information, see{" "}
-          <ULThemeLink href="https://www.functionhealth.com/legal/privacy-policy">
+          <ULThemeLink
+            href="https://www.functionhealth.com/legal/privacy-policy"
+            className="font-medium"
+          >
             Function's Privacy Policy
           </ULThemeLink>
           .
