@@ -196,17 +196,21 @@ function LoginForm() {
           />
         )}
 
+        <ULThemeButton
+          type="submit"
+          className="w-full mt-4"
+          disabled={isSubmitting}
+        >
+          {continueButtonText}
+        </ULThemeButton>
+
         {resetPasswordLink && (
-          <div className="mb-4 mt-2 text-left">
-            <ULThemeLink href={resetPasswordLink}>
+          <div className="mb-4 mt-4 text-center">
+            <ULThemeLink href={resetPasswordLink} className="font-medium">
               {forgotPasswordLinkText}
             </ULThemeLink>
           </div>
         )}
-
-        <ULThemeButton type="submit" className="w-full" disabled={isSubmitting}>
-          {continueButtonText}
-        </ULThemeButton>
       </form>
     </Form>
   );
