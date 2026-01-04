@@ -86,6 +86,7 @@ export const getIndividualIdentifierDetails = (
 ): IdentifierDetails => {
   // NOTE: Remove asterisks.
   // const suffix = isRequired ? "*" : " (optional)";
+  const suffix = isRequired ? "" : "";
   const config = INDIVIDUAL_IDENTIFIER_CONFIG[identifierType];
 
   if (!config) {
