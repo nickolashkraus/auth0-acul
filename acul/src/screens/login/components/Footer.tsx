@@ -17,11 +17,12 @@ function Footer() {
   );
 
   return (
-    <div className="mt-6 text-center">
+    <div className="text-center">
+      <hr className={cn("mb-4 border-t border-[var(--function-khaki-150)]")} />
       <span className={cn("text-sm", baseTextStyles)}>
         {texts?.signupActionText || locales?.footer?.signupActionText}{" "}
       </span>
-      <ULThemeLink href={signupLink}>
+      <ULThemeLink href={signupLink} className="font-medium">
         {texts?.signupActionLinkText || locales?.footer?.signupActionLinkText}
       </ULThemeLink>
     </div>
