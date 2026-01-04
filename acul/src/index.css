@@ -323,6 +323,7 @@ body {
   --function-clay-500: #b05a36;
 
   --function-gray-300: #b0b6b5;
+  --function-gray-400: #9fa6a5;
   --function-gray-600: #616867;
   --function-gray-700: #838c8b;
   --function-gray-800: #3c3d42;
@@ -344,7 +345,7 @@ body {
   --font-mono: var(--function-font-mono);
 
   /* Colors */
-  --ul-theme-color-primary-button: var(--function-orange-500);
+  --ul-theme-color-primary-button: var(--function-gray-800);
   --ul-theme-color-primary-button-label: var(--function-khaki-50);
   --ul-theme-color-secondary-button-border: var(--function-gray-300);
   --ul-theme-color-secondary-button-label: var(--function-gray-800);
@@ -355,9 +356,9 @@ body {
   --ul-theme-color-body-text: var(--function-gray-800);
   --ul-theme-color-widget-background: var(--function-khaki-50);
   --ul-theme-color-widget-border: var(--function-khaki-150);
-  --ul-theme-color-input-labels-placeholders: var(--function-gray-600);
+  --ul-theme-color-input-labels-placeholders: var(--function-gray-400);
   --ul-theme-color-input-filled-text: var(--function-gray-800);
-  --ul-theme-color-input-border: var(--function-gray-300);
+  --ul-theme-color-input-border: var(--function-khaki-150);
   --ul-theme-color-input-background: var(--function-khaki-100);
   --ul-theme-color-icons: var(--function-gray-700);
   --ul-theme-color-error: var(--function-red-500);
@@ -371,9 +372,9 @@ body {
   --ul-theme-border-buttons-style: rounded;
   --ul-theme-border-inputs-style: rounded;
   --ul-theme-border-button-border-weight: 1px;
-  --ul-theme-border-button-border-radius: 8px;
+  --ul-theme-border-button-border-radius: 12px;
   --ul-theme-border-input-border-weight: 1px;
-  --ul-theme-border-input-border-radius: 8px;
+  --ul-theme-border-input-border-radius: 12px;
   --ul-theme-border-widget-corner-radius: 8px;
   --ul-theme-border-widget-border-weight: 0px;
   --ul-theme-border-show-widget-shadow: 1;
@@ -382,9 +383,9 @@ body {
   /* Fonts */
   --ul-theme-font-reference-text-size: 16px;
   --ul-theme-font-links-style: normal;
-  --ul-theme-font-title-size: 2rem;
-  --ul-theme-font-title-weight: 400;
-  --ul-theme-font-subtitle-size: 0.875rem;
+  --ul-theme-font-title-size: 3rem; /* 48px */
+  --ul-theme-font-title-weight: 300;
+  --ul-theme-font-subtitle-size: 1rem; /* 16px */
   --ul-theme-font-subtitle-weight: 400;
   --ul-theme-font-body-text-size: 0.875rem;
   --ul-theme-font-body-text-weight: 400;
