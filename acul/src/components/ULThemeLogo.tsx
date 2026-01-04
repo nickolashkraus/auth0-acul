@@ -1,4 +1,4 @@
-import { FunctionLogoV1 } from "@/assets/icons";
+import { FunctionLogoV2 } from "@/assets/icons";
 import { cn } from "@/lib/utils";
 import { extractTokenValue } from "@/utils/helpers/tokenUtils";
 
@@ -31,7 +31,7 @@ const ULThemeLogo = ({ altText, className, ...rest }: ULThemeLogoProps) => {
     !isLogoHidden && (
       <div className={cn(themedStylesAvatar, className)} {...rest}>
         <Avatar className="size-auto rounded-none">
-          <FunctionLogoV1
+          <FunctionLogoV2
             role="img"
             aria-label={altText}
             className={cn(themedStylesAvatarImg)}
