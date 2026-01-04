@@ -29,7 +29,7 @@ interface IdentifierConfig {
 const INDIVIDUAL_IDENTIFIER_CONFIG: Record<IdentifierType, IdentifierConfig> = {
   email: {
     labelKey: "emailPlaceholder",
-    labelFallback: "Email Address",
+    labelFallback: "Email",
     type: "email",
     autoComplete: "email",
     description:
@@ -84,7 +84,8 @@ export const getIndividualIdentifierDetails = (
   isRequired: boolean,
   screenTexts?: Record<string, string> | null
 ): IdentifierDetails => {
-  const suffix = isRequired ? "*" : " (optional)";
+  // NOTE: Remove asterisks.
+  // const suffix = isRequired ? "*" : " (optional)";
   const config = INDIVIDUAL_IDENTIFIER_CONFIG[identifierType];
 
   if (!config) {
@@ -191,10 +192,11 @@ export const getIdentifierDetails = (
     }
   }
 
-  // For login screens, always append asterisk since all fields are required
-  if (!finalLabel.endsWith("*")) {
-    finalLabel += "*";
-  }
+  // NOTE: Remove asterisks.
+  // For login screens, always append asterisk, since all fields are required.
+  // if (!finalLabel.endsWith("*")) {
+  //   finalLabel += "*";
+  // }
 
   return {
     label: finalLabel,
