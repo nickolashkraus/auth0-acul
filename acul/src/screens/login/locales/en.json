@@ -4,7 +4,7 @@
     "orText": "OR"
   },
   "heading": {
-    "title": "Welcome",
+    "title": "Member Login",
     "description": "Log in to continue",
     "logoAltText": "Application Logo"
   },
@@ -18,13 +18,13 @@
   "loginForm": {
     "selectCountryPlaceholder": "Select Country",
     "captchaLabel": "CAPTCHA*",
-    "passwordLabel": "Password*",
+    "passwordLabel": "Password",
     "forgotPasswordLinkText": "Forgot password?",
     "continueButtonText": "Continue"
   },
   "errors": {
     "errorOccurred": "An error occurred",
-    "identifierRequired": "Identifier is required",
+    "identifierRequired": "Email is required",
     "passwordRequired": "Password is required",
     "captchaCompletionRequired": "Please complete the CAPTCHA"
   }
