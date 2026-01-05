@@ -18,7 +18,11 @@ function Footer() {
 
   // Override sign up link.
   const signupLinkOverride =
-    "https://my.functionhealth.com/signup?code=928AA4E1CD199B9D73A1A3B7DBC7F4F7";
+    "https://my.functionhealth.com/signup?code=928AA4E1CD199B9D73A1A3B7DBC7F4F7&utm_source=chatgpt&utm_medium=gpt_app&utm_campaign=connect_signup&utm_content=login_page";
+
+  // Set 'Learn More' link.
+  const learnMoreLink =
+    "https://www.functionhealth.com/?utm_source=chatgpt&utm_medium=gpt_app&utm_campaign=connect_signup&utm_content=login_page";
 
   return (
     <div className="text-center">
@@ -30,10 +34,7 @@ function Footer() {
         {texts?.signupActionLinkText || locales?.footer?.signupActionLinkText}
       </ULThemeLink>
       <span className={cn("text-sm", baseTextStyles)}> or </span>
-      <ULThemeLink
-        href="https://www.functionhealth.com/"
-        className="font-medium"
-      >
+      <ULThemeLink href={learnMoreLink} className="font-medium">
         learn more
       </ULThemeLink>
       <span className={cn("text-sm", baseTextStyles)}>.</span>
