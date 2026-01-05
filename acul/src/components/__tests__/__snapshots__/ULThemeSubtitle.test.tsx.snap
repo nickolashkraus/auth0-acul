@@ -2,7 +2,7 @@
 
 exports[`ULThemeSubtitle Component matches snapshot with additional props 1`] = `
 <p
-  class="mb-4 text-body-text justify-text-header text-(length:--ul-theme-font-subtitle-size) font-subtitle"
+  class="mb-6 text-body-text justify-text-header text-(length:--ul-theme-font-subtitle-size) font-subtitle"
   data-testid="subtitle"
   id="test-id"
 >
@@ -12,7 +12,7 @@ exports[`ULThemeSubtitle Component matches snapshot with additional props 1`] = 
 
 exports[`ULThemeSubtitle Component matches snapshot with custom className 1`] = `
 <p
-  class="mb-4 text-body-text justify-text-header text-(length:--ul-theme-font-subtitle-size) font-subtitle custom-class"
+  class="mb-6 text-body-text justify-text-header text-(length:--ul-theme-font-subtitle-size) font-subtitle custom-class"
 >
   Test Subtitle
 </p>
@@ -20,7 +20,7 @@ exports[`ULThemeSubtitle Component matches snapshot with custom className 1`] = 
 
 exports[`ULThemeSubtitle Component matches snapshot with default props 1`] = `
 <p
-  class="mb-4 text-body-text justify-text-header text-(length:--ul-theme-font-subtitle-size) font-subtitle"
+  class="mb-6 text-body-text justify-text-header text-(length:--ul-theme-font-subtitle-size) font-subtitle"
 >
   Test Subtitle
 </p>
@@ -28,7 +28,7 @@ exports[`ULThemeSubtitle Component matches snapshot with default props 1`] = `
 
 exports[`ULThemeSubtitle Component matches snapshot with multiple children 1`] = `
 <p
-  class="mb-4 text-body-text justify-text-header text-(length:--ul-theme-font-subtitle-size) font-subtitle"
+  class="mb-6 text-body-text justify-text-header text-(length:--ul-theme-font-subtitle-size) font-subtitle"
 >
   <span>
     Child 1

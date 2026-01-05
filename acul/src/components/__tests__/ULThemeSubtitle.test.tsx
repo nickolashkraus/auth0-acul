@@ -58,7 +58,7 @@ describe("ULThemeSubtitle Component", () => {
       <ULThemeSubtitle className="custom-class">Test Subtitle</ULThemeSubtitle>
     );
     expect(container.firstChild).toHaveClass(
-      "mb-4 text-body-text justify-text-header text-(length:--ul-theme-font-subtitle-size) font-subtitle"
+      "mb-6 text-body-text justify-text-header text-(length:--ul-theme-font-subtitle-size) font-subtitle"
     );
     expect(container.firstChild).toHaveClass("custom-class");
   });
@@ -68,7 +68,7 @@ describe("ULThemeSubtitle Component", () => {
       <ULThemeSubtitle className="custom-class">Test Subtitle</ULThemeSubtitle>
     );
     expect(container.firstChild).toHaveClass(
-      "mb-4 text-body-text justify-text-header text-(length:--ul-theme-font-subtitle-size) font-subtitle"
+      "mb-6 text-body-text justify-text-header text-(length:--ul-theme-font-subtitle-size) font-subtitle"
     );
     expect(container.firstChild).toHaveClass("custom-class");
   });

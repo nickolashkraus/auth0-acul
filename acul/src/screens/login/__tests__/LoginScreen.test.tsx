@@ -117,10 +117,10 @@ describe("LoginScreen", () => {
     await renderScreen();
 
     await ScreenTestUtils.fillInput(
-      "Username or Email Address*",
+      "Username or Email Address",
       "test@example.com"
     );
-    await ScreenTestUtils.fillInput("Password*", "SecurePass123!");
+    await ScreenTestUtils.fillInput("Password", "SecurePass123!");
     await ScreenTestUtils.fillInput("CAPTCHA", "mock-value");
 
     await ScreenTestUtils.clickButton(/^continue$/i);
