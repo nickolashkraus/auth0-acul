@@ -10,14 +10,14 @@
   },
   "footer": {
     "signupActionText": "Not a member yet?",
-    "signupActionLinkText": "Sign Up"
+    "signupActionLinkText": "Sign up"
   },
   "alternativeLogins": {
     "continueWithText": "Continue with"
   },
   "loginForm": {
     "selectCountryPlaceholder": "Select Country",
-    "captchaLabel": "CAPTCHA*",
+    "captchaLabel": "CAPTCHA",
     "passwordLabel": "Password",
     "forgotPasswordLinkText": "Forgot password?",
     "continueButtonText": "Continue"
