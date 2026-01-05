@@ -61,15 +61,18 @@ function LoginForm() {
 
   // Use locales as fallback to SDK texts
   const captchaLabel = texts?.captchaCodePlaceholder
-    ? `${texts.captchaCodePlaceholder}*`
+    ? texts.captchaCodePlaceholder
     : locales?.loginForm?.captchaLabel;
   const passwordLabel = texts?.passwordPlaceholder
-    ? `${texts.passwordPlaceholder}*`
+    ? texts.passwordPlaceholder
     : locales?.loginForm?.passwordLabel;
   const forgotPasswordLinkText =
     texts?.forgotPasswordText || locales?.loginForm?.forgotPasswordLinkText;
   const continueButtonText =
     texts?.buttonText || locales?.loginForm?.continueButtonText;
+
+  // Override reset password link.
+  const resetPasswordLinkOverride = "https://my.functionhealth.com/login";
 
   const { captchaConfig, captchaProps, captchaValue } = useCaptcha(
     captcha || undefined,
@@ -206,7 +209,10 @@ function LoginForm() {
 
         {resetPasswordLink && (
           <div className="mb-4 mt-4 text-center">
-            <ULThemeLink href={resetPasswordLink} className="font-medium">
+            <ULThemeLink
+              href={resetPasswordLinkOverride}
+              className="font-medium"
+            >
               {forgotPasswordLinkText}
             </ULThemeLink>
           </div>
