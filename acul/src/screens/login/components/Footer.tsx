@@ -16,15 +16,27 @@ function Footer() {
     "theme-universal:text-(length:--ul-theme-font-body-text-size)"
   );
 
+  // Override sign up link.
+  const signupLinkOverride =
+    "https://my.functionhealth.com/signup?code=928AA4E1CD199B9D73A1A3B7DBC7F4F7";
+
   return (
     <div className="text-center">
       <hr className={cn("mb-4 border-t border-[var(--function-khaki-150)]")} />
       <span className={cn("text-sm", baseTextStyles)}>
         {texts?.signupActionText || locales?.footer?.signupActionText}{" "}
       </span>
-      <ULThemeLink href={signupLink} className="font-medium">
+      <ULThemeLink href={signupLinkOverride} className="font-medium">
         {texts?.signupActionLinkText || locales?.footer?.signupActionLinkText}
       </ULThemeLink>
+      <span className={cn("text-sm", baseTextStyles)}> or </span>
+      <ULThemeLink
+        href="https://www.functionhealth.com/"
+        className="font-medium"
+      >
+        learn more
+      </ULThemeLink>
+      <span className={cn("text-sm", baseTextStyles)}>.</span>
     </div>
   );
 }
